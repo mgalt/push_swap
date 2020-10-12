@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 20:00:29 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/11 20:20:28 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/12 17:48:23 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ void    fill_stack(t_data *d, int ac, char **av)
     t_stack     *st1;
 
     i = 1;
+    d->min = INT_MAX;
+    d->max = INT_MIN;
     d->stack_a = NULL;
     d->stack_b = NULL;
-    st1 = (t_stack*)malloc(sizeof(t_stack));
-    if (!(d->stack_a = (t_stack*)malloc(sizeof(t_stack))))
-        exit(err_memory());
-    if (!(d->stack_b = (t_stack*)malloc(sizeof(t_stack))))
+    d->min_num = 1;
+    if (!(st1 = (t_stack*)malloc(sizeof(t_stack))))
         exit(err_memory());
     d->stack_a = st1;
     while (i < ac)
     {
         st1->n = ft_atoi(av[i]);
-		//st1->next = NULL;
+		st1->next = NULL;
 		if (i < ac - 1)
 		{
 			if (!(st1->next = (t_stack*)malloc(sizeof(t_stack))))
