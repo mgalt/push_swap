@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:48:37 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/13 20:49:01 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/13 21:56:06 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int     main(int ac, char **av)
 	}
 	fill_stack(&data, ac, av);
     n = is_sorted(data.stack_a);
-	data.op_n = 0;
+	//sdata.op_n = 0;
     if (data.stack_a == NULL || n == 1)
         return (0);
     if (ac > 3 && ac < 7)

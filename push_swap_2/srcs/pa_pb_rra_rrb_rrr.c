@@ -6,37 +6,37 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 17:55:04 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/13 20:46:40 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/13 21:55:57 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	pa(t_stack *stack_a, t_stack *stack_b)
+void	pa(t_stack **stack_a, t_stack **stack_b)
 {
     t_stack     *tmp;
 
-    if (!stack_b)
+    if (!(*stack_b))
         exit (-1);
-    tmp = stack_b->next;
-    stack_b->next = stack_a;
-    stack_a = stack_b;
-    stack_b = tmp;
+    tmp = (*stack_b)->next;
+    (*stack_b)->next = *stack_a;
+    *stack_a = *stack_b;
+    *stack_b = tmp;
 }
 
-void	pb(t_stack *stack_a, t_stack *stack_b)
+void	pb(t_stack **stack_a, t_stack **stack_b)
 {
     t_stack     *tmp;
 
-    if (!stack_a)
+    if (!(*stack_a))
         exit (-1);
-    tmp = stack_a->next;
-    stack_a->next = stack_b;
-    stack_b = stack_a;
-    stack_a = tmp;
+    tmp = (*stack_a)->next;
+    (*stack_a)->next = *stack_b;
+    *stack_b = *stack_a;
+    *stack_a = tmp;
 }
 
-void	rev_rot_ab(t_stack *s)
+void	rev_rot_ab(t_stack **s)
 {
     t_stack     *start;
     t_stack     *end;
@@ -44,10 +44,10 @@ void	rev_rot_ab(t_stack *s)
 
 
     //ft_putendl("start of rev rot ab");
-    tmp = s;
-    end = s;
-    start = s;
-    if (!s)
+    tmp = (*s);
+    end = (*s);
+    start = (*s);
+    if (!(*s))
         exit (-1);
     while (start->next)
     {
@@ -60,11 +60,11 @@ void	rev_rot_ab(t_stack *s)
         start->next = tmp;
         end->next = NULL;
     }
-    s = start;
+    (*s) = start;
     //ft_putendl("end of rev rot ab");
 }
 
-void	rrr(t_stack *a, t_stack *b)
+void	rrr(t_stack **a, t_stack **b)
 {
 	rev_rot_ab(a);
 	rev_rot_ab(b);
