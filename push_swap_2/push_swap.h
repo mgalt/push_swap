@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 19:08:27 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/13 21:57:17 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/13 22:10:47 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,9 @@ void				pa(t_stack **stack_a, t_stack **stack_b);
 void				pb(t_stack **stack_a, t_stack **stack_b);
 void				rev_rot_ab(t_stack **s);
 void				rrr(t_stack **a, t_stack **b);
+int					sort5(t_data *d, t_stack **stack_a, t_stack **stack_b);
+int					first_two(t_stack **a, t_stack **b);
+
 
 /*
 ** utils----------------------------------

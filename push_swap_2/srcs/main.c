@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:48:37 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/13 21:56:06 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/13 22:01:36 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ int		sort_35(t_data *d, int ac)
 	//n = 0;
 	if (ac == 4)
 		d->op_n = d->op_n + sort3(d, &d->stack_a);
-	//if (ac == 6)
-	//	d->op_n = d->op_n + sort5(d, d->stack_a);
+	if (ac == 6)
+		d->op_n = d->op_n + sort5(d, &d->stack_a, &d->stack_b);
 	return (d->op_n);
 }
 

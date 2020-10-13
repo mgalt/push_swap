@@ -6,11 +6,21 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:56:15 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/13 21:50:03 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/13 22:12:04 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+int		sort5(t_data *d, t_stack **stack_a, t_stack **stack_b)
+{
+	int		ret;
+
+	ret = 0;
+	d->op_n = d->op_n + first_two(stack_a, stack_b);
+	d->op_n = d->op_n + sort3(d, stack_a);
+	return (d->op_n);
+}
 
 int		sort3(t_data *d, t_stack **stack_a)
 {
