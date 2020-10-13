@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:48:37 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/13 17:08:08 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/13 20:49:01 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,14 @@ void	check_digits_overflow(char *arg)
 
 int		sort_35(t_data *d, int ac)
 {
-	int 	n;
+	//int 	n;
 
-	n = 0;
+	//n = 0;
 	if (ac == 4)
-		i = i + sort3(d->stack_a);
-	if (ac == 6)
-		i = i + sort5(d->stack_a);
-	return (i);
+		d->op_n = d->op_n + sort3(d, &d->stack_a);
+	//if (ac == 6)
+	//	d->op_n = d->op_n + sort5(d, d->stack_a);
+	return (d->op_n);
 }
 
 int     main(int ac, char **av)
@@ -64,11 +64,11 @@ int     main(int ac, char **av)
     int		i;
 	t_data	data;
     int     n;
-    int     c;
+    //int     c;
 
 	i = 1;
     n = -1;
-    c = 0;
+    //c = 0;
     if (ac == 1)
         return(err_no_args());
     while (i < ac)
@@ -78,13 +78,16 @@ int     main(int ac, char **av)
 	}
 	fill_stack(&data, ac, av);
     n = is_sorted(data.stack_a);
+	data.op_n = 0;
     if (data.stack_a == NULL || n == 1)
         return (0);
     if (ac > 3 && ac < 7)
-        c = c + sort_35(&data, ac);
-    if (ac >= 7 && ac <= 800)
-		c = c + a_lot(&data, i, ac);
-	if (ac > 800)
-		c = c + too_much(&data, i);
-	
+        data.op_n = data.op_n + sort_35(&data, ac);
+    //if (ac >= 7 && ac <= 800)
+	//	data.op_n = data.op_n + a_lot(&data, i, ac);
+	//if (ac > 800)
+	//	data.op_n = data.op_n + too_much(&data, i);
+	printf("operations number: %d\n", data.op_n);
+	//free_stacks();
+	return (0);
 }

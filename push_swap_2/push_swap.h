@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 19:08:27 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/13 18:03:22 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/13 20:52:05 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,10 @@ typedef struct      s_data
     t_stack			*stack_a;
 	t_stack			*stack_b;
 	t_stack			*last_a;
-    int             max;
-    int             min;
-    int             min_num;
+    //int             max;
+    //int             min;
+    //int             min_num;
+    int				op_n;
 }					t_data;
 
 /*
@@ -60,11 +61,15 @@ void    			fill_stack(t_data *d, int ac, char **av);
 int     			is_sorted(t_stack *s);
 int					find_min_max(t_data *d);
 int		            sort_35(t_data *data, int ac);
-int		            sort3(t_stack *stack_a);
-int					sort3_sa(t_stack *stack_a);
+int		            sort3(t_data *d, t_stack **stack_a);
+int					sort3_sa(t_data *d, t_stack *stack_a);
+int					sort3_ra(t_data *d, t_stack **stack_a);
+int					sort3_rra(t_data *d, t_stack *stack_a);
+int					sort3_sa_ra(t_data *d, t_stack *stack_a);
+int					sort3_sa_rra(t_data *d, t_stack *stack_a);
 void				swap_a_b(t_stack *s);
 void				ss(t_stack *a, t_stack *b);
-void				rotate_a_b(t_stack *s);
+void				rotate_a_b(t_stack **s);
 void				rr(t_stack *a, t_stack *b);
 void				pa(t_stack *stack_a, t_stack *stack_b);
 void				pb(t_stack *stack_a, t_stack *stack_b);

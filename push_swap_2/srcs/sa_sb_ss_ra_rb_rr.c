@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 17:44:31 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/13 17:54:24 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/13 20:52:56 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	swap_a_b(t_stack *s)
 	s = s->next;
 	tmp->next = s->next;
 	s->next = tmp;
+	//ft_putendl("end of swap a b");
 }
 
 void	ss(t_stack *a, t_stack *b)
@@ -30,20 +31,21 @@ void	ss(t_stack *a, t_stack *b)
 	swap_a_b(b);
 }
 
-void	rotate_a_b(t_stack *s)
+void	rotate_a_b(t_stack **s)
 {
 	t_stack		*tmp;
 
-	tmp = s;
-	if (!s)
+	tmp = (*s);
+	if (!(*s))
 		exit(-1);
-	while (s->next)
-		s = s->next;
-	s->next = tmp;
+	while ((*s)->next)
+		(*s) = (*s)->next;
+	(*s)->next = tmp;
 	tmp = tmp->next;
-	s = s->next;
-	s->next = NULL;
-	s = tmp;
+	(*s) = (*s)->next;
+	(*s)->next = NULL;
+	(*s) = tmp;
+	//ft_putendl("end of ra");
 }
 
 void	rr(t_stack *a, t_stack *b)
