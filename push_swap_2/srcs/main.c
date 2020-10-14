@@ -6,11 +6,14 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:48:37 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/13 22:01:36 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/14 17:57:16 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+//gcc -o exec srcs/main.c srcs/error.c srcs/utils.c srcs/init.c srcs/sort.c srcs/pa_pb_rra_rrb_rrr.c srcs/ra_rra_num.c srcs/sa_sb_ss_ra_rb_rr.c srcs/sort3.c srcs/sort5.c srcs/utils2.c -I libft/*.c
+
 
 int     is_sorted(t_stack *s)
 {

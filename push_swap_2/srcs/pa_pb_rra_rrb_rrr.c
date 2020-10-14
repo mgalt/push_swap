@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 17:55:04 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/13 21:55:57 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/14 17:59:01 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	pa(t_stack **stack_a, t_stack **stack_b)
     t_stack     *tmp;
 
     if (!(*stack_b))
-        exit (-1);
+        return ;
     tmp = (*stack_b)->next;
     (*stack_b)->next = *stack_a;
     *stack_a = *stack_b;

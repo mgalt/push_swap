@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 19:08:27 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/13 22:10:47 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/14 17:53:24 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,13 @@ void				rev_rot_ab(t_stack **s);
 void				rrr(t_stack **a, t_stack **b);
 int					sort5(t_data *d, t_stack **stack_a, t_stack **stack_b);
 int					first_two(t_stack **a, t_stack **b);
+int					a_position(t_stack **a, t_stack **b, int i);
+int					find_len(t_stack *a);
+int					rra_num(t_stack **a, int i);
+int					ra_num(t_stack **a, int i);
+int					a_amount(t_stack **a, int a_min_i);
+int					sort_stack_a(t_stack **a, t_stack **b);
+int					find_position(t_stack *a, int min);
 
 
 /*
@@ -88,5 +95,8 @@ int					len_tab(char **tab);
 void				free_tab(char **tab);
 int					ft_atoi(const char *str);
 int					ft_abs(int n);
+int					find_max(t_stack *a);
+int					find_min(t_stack *a);
+int					find_a_min_i(t_stack *a, int a_min);
 
 #endif

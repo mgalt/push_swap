@@ -6,19 +6,53 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:56:15 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/13 22:12:04 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/14 17:59:37 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+int		find_position(t_stack *a, int min)
+{
+	int		i;
+	int		pos;
+
+	i = 0;
+	pos = 0;
+	while (a)
+	{
+		if (min == a->n)
+			pos = i;
+		i++;
+		a = a->next;
+	}
+	return (pos);
+}
+
 int		sort5(t_data *d, t_stack **stack_a, t_stack **stack_b)
 {
 	int		ret;
+	int		i;
+	int		min;
 
+
+	//ft_putendl("in sort 5");
 	ret = 0;
+	i = 0;
+	min = 0;
 	d->op_n = d->op_n + first_two(stack_a, stack_b);
 	d->op_n = d->op_n + sort3(d, stack_a);
+	while (*stack_b)
+	{
+		i = 0;
+		i = a_position(stack_a, stack_b, i);
+		d->op_n = d->op_n + a_amount(stack_a, i);
+		pa(stack_a, stack_b);
+		write(1, "pa\n", 3);
+	}
+	min = find_min(*stack_a);
+	i = find_position(*stack_a, min);
+	d->op_n = d->op_n + a_amount(stack_a, i);
 	return (d->op_n);
 }
 
@@ -28,6 +62,7 @@ int		sort3(t_data *d, t_stack **stack_a)
 	int		ret;
 
 	//op_n = 0;
+	//ft_putendl("in sort 3");
 	ret = 0;
 	if ((*stack_a)->n > (*stack_a)->next->n && (*stack_a)->next->n < (*stack_a)->next->next->n
 	&& (*stack_a)->next->next->n > (*stack_a)->n)
