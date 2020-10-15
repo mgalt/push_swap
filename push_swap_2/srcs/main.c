@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:48:37 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/14 17:57:16 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/15 14:09:02 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,15 @@ int		sort_35(t_data *d, int ac)
 	return (d->op_n);
 }
 
+int		a_lot(t_data *d, int ac)
+{
+	if (ac <= 200)
+		d->op_n = d->op_n + medium(d, &(d->stack_a), &(d->stack_b));
+	else if (ac <= 800)
+		d->op_n = d->op_n + large(d);
+	return (d->op_n);
+}
+
 int     main(int ac, char **av)
 {
     int		i;
@@ -86,8 +95,8 @@ int     main(int ac, char **av)
         return (0);
     if (ac > 3 && ac < 7)
         data.op_n = data.op_n + sort_35(&data, ac);
-    //if (ac >= 7 && ac <= 800)
-	//	data.op_n = data.op_n + a_lot(&data, i, ac);
+    if (ac >= 7 && ac <= 800)
+		data.op_n = data.op_n + a_lot(&data, ac);
 	//if (ac > 800)
 	//	data.op_n = data.op_n + too_much(&data, i);
 	printf("operations number: %d\n", data.op_n);
