@@ -6,7 +6,7 @@
 #    By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/14 18:09:24 by mgalt             #+#    #+#              #
-#    Updated: 2020/10/15 14:04:11 by mgalt            ###   ########.fr        #
+#    Updated: 2020/10/15 14:50:30 by mgalt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRC = srcs/error.c \
 		srcs/sort5.c \
 		srcs/utils.c \
 		srcs/utils2.c \
-		srcs/sort200.c
+		srcs/sort200.c \
+		srcs/sort_b.c
 
 CC = gcc
 

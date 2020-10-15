@@ -6,11 +6,18 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 14:03:56 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/15 14:41:46 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/15 14:54:58 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+int		r_rr_100(t_stack **a, t_stack **b, int len)
+{
+	int		i;
+	int		pos;
+	int	
+}
 
 int		medium_pos(t_stack *a, int max)
 {
@@ -59,9 +66,17 @@ int		func(t_stack **a, t_stack **b, int pos, int len1)
 		if ((*a) && (*a)->n <= len1)
 		{
 			if (find_len(*b) == 1 || (!*b))
-				i = i + b_empty_or_one();
+			{
+				pb(*a, *b);
+				i++;
+			}
 		}
+		if (find_len(*b) > 1 && (*a) && (*a)->n <= len1)
+			i = i + sort_b(a, b);
+		if (find_len(*b) > 1 && (*a) && (*a)->n <= len1)
+			i = i + pre_pb(a, b);
 	}
+	return (i);
 }
 
 int		medium(t_data *d, t_stack **a, t_stack **b)

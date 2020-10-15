@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 19:08:27 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/15 14:08:15 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/15 14:53:18 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ int					sort_stack_a(t_stack **a, t_stack **b);
 int					find_position(t_stack *a, int min);
 int					a_lot(t_data *d, int ac);
 int					medium(t_data *d, t_stack **a, t_stack **b);
+int					sort_b(t_stack **a, t_stack **b);
+int					pre_pb(t_stack **a, t_stack **b);
 
 /*
 ** utils----------------------------------
