@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 17:44:31 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/13 21:55:59 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/15 19:26:40 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,7 @@ void	rotate_a_b(t_stack **s)
 void	rr(t_stack **a, t_stack **b)
 {
 	rotate_a_b(a);
+	write(1, "ra\n", 3);
 	rotate_a_b(b);
+	write(1, "rb\n", 3);
 }

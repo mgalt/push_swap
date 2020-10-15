@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 22:04:40 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/14 18:08:25 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/15 19:56:12 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		sort_stack_a(t_stack **a, t_stack **b)
 	a_min = find_min(*a);
 	a_min_i = find_a_min_i(*a, a_min);
 	if ((*b)->n < a_min || (*b)->n > a_max)
-		i = i + a_amount(a, a_min_i);
+		i = i + ra_rra_num(a, a_min_i);
 	return (i);
 
 }

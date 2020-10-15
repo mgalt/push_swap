@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:56:15 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/14 17:59:37 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/15 19:55:52 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@ int		sort5(t_data *d, t_stack **stack_a, t_stack **stack_b)
 	{
 		i = 0;
 		i = a_position(stack_a, stack_b, i);
-		d->op_n = d->op_n + a_amount(stack_a, i);
+		d->op_n = d->op_n + ra_rra_num(stack_a, i);
 		pa(stack_a, stack_b);
 		write(1, "pa\n", 3);
 	}
 	min = find_min(*stack_a);
 	i = find_position(*stack_a, min);
-	d->op_n = d->op_n + a_amount(stack_a, i);
+	d->op_n = d->op_n + ra_rra_num(stack_a, i);
 	return (d->op_n);
 }
 

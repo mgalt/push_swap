@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:48:37 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/15 14:09:02 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/15 21:20:15 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,9 @@ int		sort_35(t_data *d, int ac)
 int		a_lot(t_data *d, int ac)
 {
 	if (ac <= 200)
-		d->op_n = d->op_n + medium(d, &(d->stack_a), &(d->stack_b));
+		d->op_n = d->op_n + medium(d, &d->stack_a, &d->stack_b);
 	else if (ac <= 800)
-		d->op_n = d->op_n + large(d);
+		d->op_n = d->op_n + large(d, &d->stack_a, &d->stack_b);
 	return (d->op_n);
 }
 

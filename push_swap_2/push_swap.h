@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 19:08:27 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/15 14:53:18 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/15 22:10:22 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,13 +81,21 @@ int					a_position(t_stack **a, t_stack **b, int i);
 int					find_len(t_stack *a);
 int					rra_num(t_stack **a, int i);
 int					ra_num(t_stack **a, int i);
-int					a_amount(t_stack **a, int a_min_i);
+int					ra_rra_num(t_stack **a, int a_min_i);
 int					sort_stack_a(t_stack **a, t_stack **b);
 int					find_position(t_stack *a, int min);
 int					a_lot(t_data *d, int ac);
 int					medium(t_data *d, t_stack **a, t_stack **b);
 int					sort_b(t_stack **a, t_stack **b);
 int					pre_pb(t_stack **a, t_stack **b);
+int		            rb_rrb_num(t_stack **a, int a_min_i);
+int					rb_num(t_stack **a, int i);
+int					rrb_num(t_stack **a, int i);
+int					find_position_100(t_stack *b, int n, int pos);
+int					large(t_data *d, t_stack **a, t_stack **b);
+int					medium_pos(t_stack *a, int max);
+int					r_rr_100(t_stack **a, t_stack **b, int len);
+int					range(t_stack *a, int max);
 
 /*
 ** utils----------------------------------
@@ -101,5 +109,13 @@ int					ft_abs(int n);
 int					find_max(t_stack *a);
 int					find_min(t_stack *a);
 int					find_a_min_i(t_stack *a, int a_min);
+
+/*
+** checker--------------------------------
+*/
+int					read_instructions(t_stack **a, t_stack **b);
+void				do_op(char *s, t_stack **a, t_stack **b);
+void				err_no_op(void);
+int					is_space(char c);
 
 #endif
