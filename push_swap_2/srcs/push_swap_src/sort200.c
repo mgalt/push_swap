@@ -6,11 +6,11 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 14:03:56 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/15 20:04:37 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/18 18:26:13 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 int		r_or_rr_2(t_stack **a, t_stack **b, int pos, int len)
 {

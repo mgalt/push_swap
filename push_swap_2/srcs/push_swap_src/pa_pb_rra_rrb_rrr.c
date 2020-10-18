@@ -6,11 +6,11 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 17:55:04 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/14 17:59:01 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/18 18:25:42 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 void	pa(t_stack **stack_a, t_stack **stack_b)
 {

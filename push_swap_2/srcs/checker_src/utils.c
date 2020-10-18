@@ -6,11 +6,11 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 19:40:46 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/12 17:54:23 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/18 18:25:26 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 int		ft_atoi(const char *str)
 {

@@ -6,11 +6,28 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/12 17:51:19 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/14 17:38:26 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/18 18:26:24 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
+
+int     is_sorted(t_stack *s)
+{
+    t_stack     *tmp;
+
+    tmp = s;
+	//ft_putendl("in is sorted");
+    while (tmp->next != NULL)
+    {
+		//ft_putendl("in is sorted while");
+        if (tmp->n > tmp->next->n)
+            return (0);
+        tmp = tmp->next;
+    }
+	//ft_putendl("in is sorted after while");
+    return (1);
+}
 
 int		find_a_min_i(t_stack *a, int a_min)
 {

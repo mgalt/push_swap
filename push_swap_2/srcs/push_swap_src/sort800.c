@@ -6,11 +6,11 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 19:47:31 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/15 21:14:40 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/18 18:26:16 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 int		func1(t_stack **a, t_stack **b, int pos, int len1)
 {

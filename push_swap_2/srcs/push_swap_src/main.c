@@ -6,31 +6,13 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:48:37 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/15 21:20:15 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/18 19:25:34 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 //gcc -o exec srcs/main.c srcs/error.c srcs/utils.c srcs/init.c srcs/sort.c srcs/pa_pb_rra_rrb_rrr.c srcs/ra_rra_num.c srcs/sa_sb_ss_ra_rb_rr.c srcs/sort3.c srcs/sort5.c srcs/utils2.c -I libft/*.c
-
-
-int     is_sorted(t_stack *s)
-{
-    t_stack     *tmp;
-
-    tmp = s;
-	//ft_putendl("in is sorted");
-    while (tmp->next != NULL)
-    {
-		//ft_putendl("in is sorted while");
-        if (tmp->n > tmp->next->n)
-            return (0);
-        tmp = tmp->next;
-    }
-	//ft_putendl("in is sorted after while");
-    return (1);
-}
 
 void	check_digits_overflow(char *arg)
 {

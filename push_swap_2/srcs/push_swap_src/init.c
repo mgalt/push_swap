@@ -6,11 +6,11 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 20:00:29 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/13 21:46:05 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/18 18:24:46 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 void    fill_stack(t_data *d, int ac, char **av)
 {

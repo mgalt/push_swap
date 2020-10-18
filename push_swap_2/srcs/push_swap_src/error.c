@@ -6,11 +6,11 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 19:36:29 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/11 20:04:27 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/18 18:25:35 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 int		err_no_args(void)
 {

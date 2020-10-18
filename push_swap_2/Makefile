@@ -6,86 +6,84 @@
 #    By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/14 18:09:24 by mgalt             #+#    #+#              #
-#    Updated: 2020/10/15 22:18:29 by mgalt            ###   ########.fr        #
+#    Updated: 2020/10/18 19:06:28 by mgalt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-PUSH_SWAP_NAME = push_swap
-
-CHECKER_NAME = checker
-
-CHECKER_SRC = srcs/error.c \
-		srcs/init.c \
-		srcs/main.c \
-		srcs/pa_pb_rra_rrb_rrr.c \
-		srcs/sa_sb_ss_ra_rb_rr.c \
-		srcs/ra_rra_num.c \
-		srcs/sort.c \
-		srcs/sort3.c \
-		srcs/sort5.c \
-		srcs/utils.c \
-		srcs/utils2.c \
-		srcs/sort200.c \
-		srcs/sort_b.c \
-		srcs/rb_rrb_num.c \
-		srcs/sort800.c 
-
-PS_SRC = srcs/error.c \
-		srcs/init.c \
-		srcs/main.c \
-		srcs/pa_pb_rra_rrb_rrr.c \
-		srcs/sa_sb_ss_ra_rb_rr.c \
-		srcs/ra_rra_num.c \
-		srcs/sort.c \
-		srcs/sort3.c \
-		srcs/sort5.c \
-		srcs/utils.c \
-		srcs/utils2.c \
-		srcs/sort200.c \
-		srcs/sort_b.c \
-		srcs/rb_rrb_num.c \
-		srcs/sort800.c 
-
 CC = gcc
-
-LIB = libft
-
-PS_OBJ = $(patsubst %.c,%.o,$(PS_SRC))
-
-CHECKER_OBJ = $(patsubst %.c,%.o,$(CHECKER_SRC))
 
 CFLAGS = -Wall -Wextra -Werror
 
-LIBFLAGS = -L libft -lft 
+CHECKER_NAME = checker
 
-#all: $(NAME)
+PUSH_SWAP_NAME = push_swap
 
-#$(NAME): $(OBJ)
-#	@make -C libft
-#	@$(CC) $(LIBFLAGS) $^ -o $@
+LIBFT = libft/libft.a
 
-#%.o: %.c
-#	@$(CC) $(CFLAGS) -c $< -I includes -I libft/includes -o $@
+LIBFT_DIR = ./libft/
 
-all: $(CHECKER_NAME)
+HEADER = push_swap.h
 
-$(CHECKER_NAME): $(PS_OBJ) $(CHECKER_OBJ)
+CHECKER_SOURCES = srcs/checker_src/error.c \
+		srcs/checker_src/init.c \
+		srcs/checker_src/pa_pb_rra_rrb_rrr.c \
+		srcs/checker_src/sa_sb_ss_ra_rb_rr.c \
+		srcs/checker_src/ra_rra_num.c \
+		srcs/checker_src/utils.c \
+		srcs/checker_src/utils2.c \
+		srcs/checker_src/rb_rrb_num.c \
+		srcs/checker_src/checker_main.c \
+		srcs/checker_src/do_op.c
+
+PUSH_SWAP_SOURCES = srcs/push_swap_src/error.c \
+		srcs/push_swap_src/init.c \
+		srcs/push_swap_src/main.c \
+		srcs/push_swap_src/pa_pb_rra_rrb_rrr.c \
+		srcs/push_swap_src/sa_sb_ss_ra_rb_rr.c \
+		srcs/push_swap_src/ra_rra_num.c \
+		srcs/push_swap_src/sort.c \
+		srcs/push_swap_src/sort3.c \
+		srcs/push_swap_src/sort5.c \
+		srcs/push_swap_src/utils.c \
+		srcs/push_swap_src/utils2.c \
+		srcs/push_swap_src/sort200.c \
+		srcs/push_swap_src/sort_b.c \
+		srcs/push_swap_src/rb_rrb_num.c \
+		srcs/push_swap_src/sort800.c 
+
+OBJ_P_SW = $(patsubst %.c,%.o,$(PUSH_SWAP_SOURCES))
+
+OBJ_CH = $(patsubst %.c,%.o,$(CHECKER_SOURCES))
+
+all: $(PUSH_SWAP_NAME) $(CHECKER_NAME)
+
+$(PUSH_SWAP_NAME): $(LIBFT) $(OBJ_P_SW)
+	$(CC) $(CFLAGS) -lft -L libft -I$(HEADER) \ 
+	$(OBJ_P_SW) -o $(PUSH_SWAP_NAME)
+	echo "\nobject files were created (push_swap)"
+
+
+$(CHECKER_NAME): $(LIBFT) $(OBJ_CH)
+	$(CC) $(CFLAGS) -lft -L libft -I$(HEADER) \
+	$(OBJ_CH) -o $(CHECKER_NAME)
+	echo "\nobject files were created (checker)"
+	   
+%.o: %.c $(HEADER)
+	$(CC) $(CFLAGS) -c $(HEADER) $< -o $@
+
+$(LIBFT):
 	make -C libft
-	@$(CC) $(LIBFLAGS) $^ -o $@
-
-	@echo "\033[33mcreating the checker executable!\033[0m"
-	$(CC) $(CFLAGS) -I includes -I libft/includes libft/libft.a $(CHECKER_SRC) -o $(CHECKER_NAME)
-	@echo "\033[33mcreating the push swap executable!\033[0m"
-	$(CC) $(CFLAGS) -I includes -I libft/includes libft/libft.a $(PS_SRC) -o $(PUSH_SWAP_NAME)
 
 clean:
-	@rm -f $(OBJ)
-	@make -C libft clean
+	echo "\033[31mObjects cleaned!\033[0m"
+	make -C libft clean
+	rm -f $(OBJ_CH)
+	rm -f $(OBJ_P_SW)
 
 fclean: clean
-	@rm -f $(NAME)
-	@make -C libft fclean
+	echo "\033[31mExecutables cleaned!\033[0m"
+	make -C libft fclean
+	rm -f $(CHECKER_NAME)
+	rm -f $(PUSH_SWAP_NAME)
 
 re: fclean all
-
-.PHONY: all clean fclean re

@@ -6,11 +6,11 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 17:40:29 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/13 21:57:48 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/18 18:26:05 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 int     sort3_sa_rra(t_data *d, t_stack **stack_a)
 {

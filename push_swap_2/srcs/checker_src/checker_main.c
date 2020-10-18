@@ -6,11 +6,14 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 21:42:04 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/15 22:21:38 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/18 19:15:22 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
+
+
+// gcc -o checker srcs/checker_src/*.c -I libft/*.c
 
 int		read_instructions(t_stack **a, t_stack **b)
 {
@@ -25,7 +28,8 @@ int		read_instructions(t_stack **a, t_stack **b)
 	if (*b)
 	{
 		ft_putstr("\33[31mKO\033[0m\n");
-		exit(-1);
+		//exit(-1);
+		return (0);
 	}
 	if (is_sorted(*a) == 1)
 		ft_putstr("\033[32mOK\033[0m\n");

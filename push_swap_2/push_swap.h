@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 19:08:27 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/15 22:10:22 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/18 19:19:26 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int					sort3_sa_rra(t_data *d, t_stack **stack_a);
 void				swap_a_b(t_stack **s);
 void				ss(t_stack **a, t_stack **b);
 void				rotate_a_b(t_stack **s);
-void				rr(t_stack **a, t_stack **b);
+void				rr(t_stack **a, t_stack **b, int flag);
 void				pa(t_stack **stack_a, t_stack **stack_b);
 void				pb(t_stack **stack_a, t_stack **stack_b);
 void				rev_rot_ab(t_stack **s);

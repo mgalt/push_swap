@@ -6,11 +6,11 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 14:48:10 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/15 19:57:26 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/18 18:25:57 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 int		find_position_b(t_stack **a, t_stack **b)
 {

@@ -6,18 +6,21 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 17:44:31 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/15 19:26:40 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/18 19:19:07 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 void	swap_a_b(t_stack **s)
 {
 	t_stack		*tmp;
 
 	if (!(*s))
-		exit(-1);
+	{
+		//ft_putendl("no *s");
+		return ;
+	}
 	tmp = (*s);
 	(*s) = (*s)->next;
 	tmp->next = (*s)->next;
@@ -37,7 +40,7 @@ void	rotate_a_b(t_stack **s)
 
 	tmp = (*s);
 	if (!(*s))
-		exit(-1);
+		return ;
 	while ((*s)->next)
 		(*s) = (*s)->next;
 	(*s)->next = tmp;
@@ -48,10 +51,13 @@ void	rotate_a_b(t_stack **s)
 	//ft_putendl("end of ra");
 }
 
-void	rr(t_stack **a, t_stack **b)
+void	rr(t_stack **a, t_stack **b, int flag)
 {
 	rotate_a_b(a);
-	write(1, "ra\n", 3);
 	rotate_a_b(b);
-	write(1, "rb\n", 3);
+	if (flag == 1)
+	{
+		write(1, "ra\n", 3);
+		write(1, "rb\n", 3);
+	}
 }

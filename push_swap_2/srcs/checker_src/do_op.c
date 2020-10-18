@@ -6,11 +6,11 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 21:51:10 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/15 22:10:23 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/18 19:19:46 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 int			is_space(char c)
 {
@@ -43,11 +43,11 @@ void		do_op(char *s, t_stack **a, t_stack **b)
 	else if (ft_strcmp(s, "rb") == 0)
 		rotate_a_b(b);
 	else if (ft_strcmp(s, "rr") == 0)
-		rr(a, b);
+		rr(a, b, 2);
 	else if (ft_strcmp(s, "rra") == 0)
-		rev_rot_a_b(a);
+		rev_rot_ab(a);
 	else if (ft_strcmp(s, "rrb") == 0)
-		rev_rot_a_b(b);
+		rev_rot_ab(b);
 	else if (ft_strcmp(s, "rrr") == 0)
 		rrr(a, b);
 	else

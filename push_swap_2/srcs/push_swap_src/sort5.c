@@ -6,11 +6,11 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 22:04:40 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/15 19:56:12 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/18 18:26:10 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 int		sort_stack_a(t_stack **a, t_stack **b)
 {

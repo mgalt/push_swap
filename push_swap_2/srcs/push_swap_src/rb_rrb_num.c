@@ -6,11 +6,11 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 19:11:52 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/15 19:27:36 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/18 18:25:50 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 int		rrb_num(t_stack **a, int i)
 {
