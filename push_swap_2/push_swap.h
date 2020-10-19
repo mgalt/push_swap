@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 19:08:27 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/19 17:50:02 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/19 18:20:12 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ int					large(t_data *d, t_stack **a, t_stack **b);
 int					medium_pos(t_stack *a, int max);
 int					r_rr_100(t_stack **a, t_stack **b, int len);
 int					range(t_stack *a, int max);
+int		            final_sort(t_stack **a, t_stack **b);
 
 /*
 ** utils----------------------------------

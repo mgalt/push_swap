@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:48:37 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/19 17:58:14 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/19 18:19:18 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int		sort_35(t_data *d, int ac)
 
 	//n = 0;
 	//ft_putendl("in sort 35");
-	if (/*ac == 4 || */d->len == 3 || d->len == 4)
+	if (/*ac == 4 || */d->len == 3)
 		d->op_n = d->op_n + sort3(d, &d->stack_a);
 	if (/*ac == 6 || */d->len == 5)
 		d->op_n = d->op_n + sort5(d, &d->stack_a, &d->stack_b);
@@ -227,6 +227,30 @@ t_stack		*parse_stack(int argc,
 	return (d->stack_a);
 }	
 
+int     is_sorted_2(t_stack *s, t_stack *s1)
+{
+    //t_stack     *tmp;
+
+    //tmp = s;
+	//ft_putendl("in is sorted");
+	if (!s)
+		return (0);
+	if (s1)
+		return (0);
+    while (s != NULL)
+    {
+		//ft_putendl("in is sorted while");
+        if (s->next != NULL)
+		{
+			if (s->n > s->next->n)
+				return (0);
+		}
+		s = s->next;
+    }
+	//ft_putendl("in is sorted after while");
+    return (1);
+}
+
 int     main(int ac, char **av)
 {
     int		i;
@@ -257,6 +281,8 @@ int     main(int ac, char **av)
         data.op_n = data.op_n + sort_35(&data, ac);
     if (ac >= 7 && ac <= 800)
 		data.op_n = data.op_n + a_lot(&data, ac);
+	if (!(is_sorted_2(data.stack_a, data.stack_b))) // not sorted
+		data.op_n = final_sort(&data.stack_a, &data.stack_b);
 	//if (ac > 800)
 	//	data.op_n = data.op_n + too_much(&data, i);
 	printf("operations number: %d\n", data.op_n);
