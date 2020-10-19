@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 20:00:29 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/18 18:24:46 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/19 17:49:57 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void    fill_stack(t_data *d, int ac, char **av)
     i = 1;
     //d->min = INT_MAX;
    // d->max = INT_MIN;
-    d->stack_a = NULL;
-    d->stack_b = NULL;
+    //d->stack_a = NULL;
+    //d->stack_b = NULL;
     //d->min_num = 1;
     d->op_n = 0;
     if (!(st1 = (t_stack*)malloc(sizeof(t_stack))))
@@ -40,5 +40,5 @@ void    fill_stack(t_data *d, int ac, char **av)
 		}
 		i++;
     }
-	d->last_a = st1;
+	//d->last_a = st1;
 }

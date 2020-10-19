@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 17:44:31 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/18 18:25:53 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/18 19:52:16 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,13 @@ void	rotate_a_b(t_stack **s)
 	//ft_putendl("end of ra");
 }
 
-void	rr(t_stack **a, t_stack **b)
+void	rr(t_stack **a, t_stack **b, int flag)
 {
 	rotate_a_b(a);
-	write(1, "ra\n", 3);
 	rotate_a_b(b);
-	write(1, "rb\n", 3);
+	if (flag == 1)
+	{
+		write(1, "ra\n", 3);
+		write(1, "rb\n", 3);
+	}
 }

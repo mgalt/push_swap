@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 21:42:04 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/18 19:15:22 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/18 19:59:49 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int		read_instructions(t_stack **a, t_stack **b)
 	if (*b)
 	{
 		ft_putstr("\33[31mKO\033[0m\n");
-		//exit(-1);
 		return (0);
 	}
 	if (is_sorted(*a) == 1)
@@ -51,5 +50,6 @@ int		main(int ac, char **av)
     if (d.stack_a == NULL)
         return (0);
 	read_instructions(&d.stack_a, &d.stack_b);
+	free_stacks(&d);
 	return (0);
 }

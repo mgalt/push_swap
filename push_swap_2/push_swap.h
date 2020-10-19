@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 19:08:27 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/18 19:19:26 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/19 17:50:02 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,12 @@ typedef struct      s_data
 {
     t_stack			*stack_a;
 	t_stack			*stack_b;
-	t_stack			*last_a;
+	//t_stack			*last_a;
     //int             max;
     //int             min;
     //int             min_num;
     int				op_n;
+    int             len;
 }					t_data;
 
 /*
@@ -109,6 +110,8 @@ int					ft_abs(int n);
 int					find_max(t_stack *a);
 int					find_min(t_stack *a);
 int					find_a_min_i(t_stack *a, int a_min);
+
+void	            free_stacks(t_data *d);
 
 /*
 ** checker--------------------------------

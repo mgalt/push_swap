@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:56:15 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/18 18:26:00 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/19 17:58:57 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,8 @@ int		sort3(t_data *d, t_stack **stack_a)
 		/*d->op_n = d->op_n + */sort3_sa_rra(d, stack_a);
 	}
 	//ft_putendl("before is_sorted");
-	//ret = is_sorted(stack_a);
-	ret = 1;
+	ret = is_sorted(*stack_a);
+	//ret = 1;
 	//ft_putendl("after is_sorted");
 	if (ret == 1)
 		return (d->op_n);
