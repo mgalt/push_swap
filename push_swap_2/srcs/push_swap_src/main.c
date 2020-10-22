@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:48:37 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/22 12:34:18 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/22 17:16:17 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		sort_35(t_data *d, int ac)
 	//int 	n;
 
 	//n = 0;
-	//ft_putendl("in sort 35");
+	ft_putendl("in sort 35");
 	if (/*ac == 4 || */d->len == 3)
 		d->op_n = d->op_n + sort3(d, &d->stack_a);
 	if (/*ac == 6 || */d->len == 5)
@@ -182,6 +182,7 @@ t_stack	 *parse_str(t_stack *stack,
 	size_t	i;
 	t_stack	*st1;
 
+	ft_putendl("in parse str");
 	numbers = ft_strsplit(str, ' ');
 	i = 0;
 	d->len = len_tab(numbers);
@@ -203,6 +204,7 @@ t_stack	 *parse_str(t_stack *stack,
 		}
 		i++;
 	}
+	ft_putendl("end parse str");
 	return (stack);
 }
 
@@ -222,6 +224,7 @@ t_stack		*parse_stack(int argc,
 		d->len = argc - 1;
 		parse_arr(stack, argc, argv, d);
 	}
+	ft_putendl("after ifs");
 	if (!d->len)
 		return (NULL);
 	return (d->stack_a);
@@ -271,8 +274,9 @@ int     main(int ac, char **av)
 	//fill_stack(&data, ac, av);
 	data.len = 0;
 	parse_stack(ac, av, &data);
-	//printf("stack_a in main: %d %d %d\n", data.stack_a->n, data.stack_a->next->n, data.stack_a->next->next->n);
+	printf("stack_a in main: %d %d %d\n", data.stack_a->n, data.stack_a->next->n, data.stack_a->next->next->n);
     n = is_sorted(data.stack_a);
+	ft_putendl("after is sorted in main");
 	//sdata.op_n = 0;
     if (data.stack_a == NULL || n == 1)
         return (0);
@@ -286,6 +290,6 @@ int     main(int ac, char **av)
 	//if (ac > 800)
 	//	data.op_n = data.op_n + too_much(&data, i);
 	printf("operations number: %d\n", data.op_n);
-	//free_stacks(&data);
+	free_stacks(&data);
 	return (0);
 }

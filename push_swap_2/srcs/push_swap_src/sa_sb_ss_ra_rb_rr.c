@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 17:44:31 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/18 19:52:16 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/22 17:18:40 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	swap_a_b(t_stack **s)
 	(*s) = (*s)->next;
 	tmp->next = (*s)->next;
 	(*s)->next = tmp;
-	//ft_putendl("end of swap a b");
+	ft_putendl("end of swap a b");
 }
 
 void	ss(t_stack **a, t_stack **b)

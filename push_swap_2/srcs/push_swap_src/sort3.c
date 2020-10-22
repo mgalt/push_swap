@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 17:40:29 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/18 18:26:05 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/22 17:21:57 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int     sort3_sa_rra(t_data *d, t_stack **stack_a)
     //int     n;
 
     //n = 2;
+    ft_putendl("sort3 sa rra");
     d->op_n = d->op_n + 2;
     swap_a_b(stack_a);
     rev_rot_ab(stack_a);
