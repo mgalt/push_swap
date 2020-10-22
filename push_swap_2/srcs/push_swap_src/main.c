@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:48:37 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/19 18:19:18 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/22 12:34:18 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 //gcc -o exec srcs/main.c srcs/error.c srcs/utils.c srcs/init.c srcs/sort.c srcs/pa_pb_rra_rrb_rrr.c srcs/ra_rra_num.c srcs/sa_sb_ss_ra_rb_rr.c srcs/sort3.c srcs/sort5.c srcs/utils2.c -I libft/*.c
 
-void	check_digits_overflow(char *arg)
+/*void	check_digits_overflow(char *arg)
 {
 	int		i;
 	double	n;
@@ -31,7 +31,7 @@ void	check_digits_overflow(char *arg)
 	n = ft_strtodbl(arg); // починить strtodbl, он переполняется
 	if (n > INT_MAX || n < INT_MIN)
 		exit(err_overflow());
-}
+}*/
 
 int		sort_35(t_data *d, int ac)
 {

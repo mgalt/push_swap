@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 19:08:27 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/19 18:20:12 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/22 13:02:08 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,6 @@ typedef struct      s_data
 {
     t_stack			*stack_a;
 	t_stack			*stack_b;
-	//t_stack			*last_a;
-    //int             max;
-    //int             min;
-    //int             min_num;
     int				op_n;
     int             len;
 }					t_data;
@@ -54,6 +50,7 @@ int					err_memory(void);
 void				check_digits_overflow(char *arg);
 
 void    			fill_stack(t_data *d, int ac, char **av);
+t_stack		        *parse_stack(int argc, char **argv, t_data *d);
 
 /*
 ** sorting--------------------------------
@@ -98,10 +95,15 @@ int					medium_pos(t_stack *a, int max);
 int					r_rr_100(t_stack **a, t_stack **b, int len);
 int					range(t_stack *a, int max);
 int		            final_sort(t_stack **a, t_stack **b);
+int                 is_sorted_2(t_stack *s, t_stack *s1);
+int		            ra_rra(t_stack **a, int len, int pos);
+int		            ra_rra_2(t_stack **a, int len1, int op_n);
+int		            push_new_min(t_stack **a, t_stack **b, int min);
 
 /*
 ** utils----------------------------------
 */
+
 double				ft_strtodbl(char *s);
 void				check_tab_len(char **tab);
 int					len_tab(char **tab);

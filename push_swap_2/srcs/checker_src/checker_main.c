@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 21:42:04 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/18 19:59:49 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/22 12:32:01 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ int		main(int ac, char **av)
 	n = 0;
 	if (ac < 2)
 		return (0);
-	fill_stack(&d, ac, av);
+	parse_stack(ac, av, &d);
+	//fill_stack(&d, ac, av);
 	//n = is_sorted(d.stack_a);
     if (d.stack_a == NULL)
         return (0);

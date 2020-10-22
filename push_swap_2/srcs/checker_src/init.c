@@ -6,7 +6,7 @@
 /*   By: mgalt <mgalt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 20:00:29 by mgalt             #+#    #+#             */
-/*   Updated: 2020/10/18 18:25:06 by mgalt            ###   ########.fr       */
+/*   Updated: 2020/10/22 12:33:30 by mgalt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,26 @@ void    fill_stack(t_data *d, int ac, char **av)
 		}
 		i++;
     }
-	d->last_a = st1;
+	//d->last_a = st1;
 }
+
+t_stack		*parse_stack(int argc,
+				char **argv, t_data *d)
+{
+	t_stack	*stack;
+	int		size;
+
+	if (!(stack = (t_stack *)ft_memalloc(sizeof(t_stack))))
+		exit(err_memory());
+	size = 0;
+	if (argc == 2 && !ft_isnum(argv[1], 10))
+		d->stack_a = parse_str(stack, argv[1], d);
+	else
+	{
+		d->len = argc - 1;
+		parse_arr(stack, argc, argv, d);
+	}
+	if (!d->len)
+		return (NULL);
+	return (d->stack_a);
+}	
